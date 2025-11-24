@@ -34,13 +34,31 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
       <div className="p-6">
         {lesson.content_type === 'video' && lesson.content_url && (
           <>
-            <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-lg">
+            <div
+              style={{
+                position: 'relative',
+                paddingBottom: '56.25%',
+                height: 0,
+                overflow: 'hidden',
+                borderRadius: '12px',
+                marginBottom: '24px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              }}
+            >
               <iframe
                 src={lesson.content_url}
                 title={lesson.title}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 0,
+                }}
               />
             </div>
             <div className="mt-6 p-5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border border-gray-200">
