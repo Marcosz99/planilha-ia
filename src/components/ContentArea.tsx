@@ -1,12 +1,14 @@
-import { Lesson } from '../lib/supabase';
-import { Download, FileText, Video, ExternalLink } from 'lucide-react';
+import { Lesson } from '../lib/data';
+import { Download, FileText, Video, ExternalLink, Lock, Key } from 'lucide-react';
 
 interface ContentAreaProps {
   lesson: Lesson | null;
   themeColor: string;
+  isLocked?: boolean;
+  onUnlockClick?: () => void;
 }
 
-export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
+export default function ContentArea({ lesson, themeColor, isLocked, onUnlockClick }: ContentAreaProps) {
   if (!lesson) {
     return (
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 flex items-center justify-center min-h-[500px]">
@@ -20,6 +22,41 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
           <p className="text-gray-500">
             Escolha uma aula no menu lateral para começar
           </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLocked) {
+    return (
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div className="border-b border-gray-200 px-6 py-4">
+          <div className="flex items-center gap-3">
+            <Lock className="w-6 h-6 text-amber-500" />
+            <h2 className="text-2xl font-bold text-gray-900">{lesson.title}</h2>
+          </div>
+        </div>
+
+        <div className="p-12 flex items-center justify-center min-h-[400px]">
+          <div className="text-center max-w-md">
+            <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Lock className="w-10 h-10 text-amber-500" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              Conteúdo Bloqueado
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Este conteúdo premium está bloqueado. Utilize sua chave de ativação para desbloquear todo o conteúdo exclusivo.
+            </p>
+            <button
+              onClick={onUnlockClick}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"
+              data-testid="button-unlock-content"
+            >
+              <Key className="w-5 h-5" />
+              Inserir Chave de Ativação
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -77,6 +114,7 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-white font-semibold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 style={{ backgroundColor: themeColor }}
+                data-testid="link-playlist"
               >
                 <ExternalLink className="w-5 h-5" />
                 Ver Playlist Completa
@@ -104,9 +142,11 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
 
             <a
               href={lesson.content_url || '#'}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl text-white font-semibold hover:opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               style={{ backgroundColor: themeColor }}
+              data-testid="button-download"
             >
               <Download className="w-5 h-5" />
               Baixar {lesson.title}
@@ -138,6 +178,7 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl text-white font-semibold hover:opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 style={{ backgroundColor: themeColor }}
+                data-testid="link-open-pdf"
               >
                 <ExternalLink className="w-5 h-5" />
                 Abrir PDF
@@ -147,6 +188,7 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
                 href={lesson.content_url || '#'}
                 download
                 className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-gray-100 text-gray-700 font-semibold hover:bg-gray-200 transition-all"
+                data-testid="button-download-pdf"
               >
                 <Download className="w-5 h-5" />
                 Baixar PDF
@@ -163,7 +205,7 @@ export default function ContentArea({ lesson, themeColor }: ContentAreaProps) {
           </div>
         )}
 
-        {!lesson.content_url && !lesson.content_text && (
+        {!lesson.content_url && !lesson.content_text && lesson.content_type !== 'locked' && (
           <div className="text-center py-12">
             <Video className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <p className="text-gray-500">Conteúdo em breve...</p>

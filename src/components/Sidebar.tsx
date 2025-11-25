@@ -1,5 +1,5 @@
-import { ModuleWithLessons, Lesson } from '../lib/supabase';
-import { Check, Video, Download, FileText, Target, BarChart3, ChevronDown } from 'lucide-react';
+import { ModuleWithLessons, Lesson } from '../lib/data';
+import { Check, Video, Download, FileText, Target, BarChart3, ChevronDown, Lock } from 'lucide-react';
 import { useState } from 'react';
 
 interface SidebarProps {
@@ -9,6 +9,7 @@ interface SidebarProps {
   onSelectLesson: (lesson: Lesson) => void;
   onToggleComplete: (lessonId: string) => void;
   themeColor: string;
+  isUnlocked: boolean;
 }
 
 const iconMap: Record<string, React.ElementType> = {
@@ -17,6 +18,7 @@ const iconMap: Record<string, React.ElementType> = {
   FileText,
   Target,
   BarChart3,
+  Lock,
 };
 
 export default function Sidebar({
@@ -26,6 +28,7 @@ export default function Sidebar({
   onSelectLesson,
   onToggleComplete,
   themeColor,
+  isUnlocked,
 }: SidebarProps) {
   const [expandedModules, setExpandedModules] = useState<Set<string>>(
     new Set(modules.map(m => m.id))
@@ -59,6 +62,7 @@ export default function Sidebar({
               <button
                 onClick={() => toggleModule(module.id)}
                 className="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                data-testid={`button-module-${module.order_index}`}
               >
                 <div className="flex items-center gap-3 flex-1 text-left">
                   <div
@@ -86,7 +90,8 @@ export default function Sidebar({
               {isExpanded && (
                 <div className="bg-gray-50">
                   {module.lessons.map((lesson) => {
-                    const Icon = iconMap[lesson.icon] || FileText;
+                    const isLocked = lesson.locked && !isUnlocked;
+                    const Icon = isLocked ? Lock : (iconMap[lesson.icon] || FileText);
                     const isSelected = selectedLesson?.id === lesson.id;
                     const isCompleted = completedLessons.has(lesson.id);
 
@@ -97,26 +102,37 @@ export default function Sidebar({
                           isSelected
                             ? 'bg-white border-l-4'
                             : 'border-transparent hover:bg-white/50'
-                        }`}
+                        } ${isLocked ? 'opacity-75' : ''}`}
                         style={isSelected ? { borderLeftColor: themeColor } : {}}
+                        data-testid={`lesson-${lesson.id}`}
                       >
-                        <button
-                          onClick={() => onToggleComplete(lesson.id)}
-                          className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
-                            isCompleted
-                              ? 'border-transparent'
-                              : 'border-gray-300 hover:border-gray-400'
-                          }`}
-                          style={isCompleted ? { backgroundColor: themeColor } : {}}
-                        >
-                          {isCompleted && <Check className="w-3 h-3 text-white" />}
-                        </button>
+                        {!isLocked && (
+                          <button
+                            onClick={() => onToggleComplete(lesson.id)}
+                            className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
+                              isCompleted
+                                ? 'border-transparent'
+                                : 'border-gray-300 hover:border-gray-400'
+                            }`}
+                            style={isCompleted ? { backgroundColor: themeColor } : {}}
+                            data-testid={`checkbox-lesson-${lesson.id}`}
+                          >
+                            {isCompleted && <Check className="w-3 h-3 text-white" />}
+                          </button>
+                        )}
+
+                        {isLocked && (
+                          <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                            <Lock className="w-4 h-4 text-amber-500" />
+                          </div>
+                        )}
 
                         <button
                           onClick={() => onSelectLesson(lesson)}
                           className="flex items-center gap-3 flex-1 text-left min-w-0"
+                          data-testid={`button-lesson-${lesson.id}`}
                         >
-                          <Icon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                          <Icon className={`w-4 h-4 flex-shrink-0 ${isLocked ? 'text-amber-500' : 'text-gray-400'}`} />
                           <span
                             className={`text-sm truncate ${
                               isSelected ? 'font-semibold text-gray-900' : 'text-gray-700'
