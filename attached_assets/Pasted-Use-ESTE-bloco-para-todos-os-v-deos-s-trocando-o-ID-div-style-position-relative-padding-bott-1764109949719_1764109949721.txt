@@ -1,0 +1,49 @@
+Use ESTE bloco para todos os vídeos, só trocando o ID:
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"> </iframe> </div>
+✅ Agora aqui estão TODOS os embeds já prontos com seus IDs colocados
+Módulo 1 — Instalação
+
+Guia Resumo
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/JFU64pFHx3o?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Módulo 3 — Conteúdo Premium
+
+Bônus — Planilha Comparativa Renda Fixa
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/WzvEJud2-_g?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+✅ Módulo 4 — Como Usar a Planilha Completa
+
+Compreendendo os Gráficos
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/Jooh9qmQE74?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Alterar Nome na Planilha
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/38-Hlc7qSxM?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Cadastrar Despesas Fixas
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/9bJBiUqGvQM?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Cadastrar Investimentos
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/UfEBsAWCjM4?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Cadastrar Despesas Variáveis
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/m9kLaxNojv0?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Métodos de Pagamento
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/tD8k27BOdlI?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Inserir Data de Vencimento
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/-G_YH6pZCMQ?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Guia Dados — Planilha Desbloqueada
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/TbwkvF0bpzY?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Relatório IA
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/lokq8xEzf0c?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Importar Fatura/Extrato
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/vRuW0brVnrI?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
+Compras Parceladas
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;"> <iframe src="https://www.youtube.com/embed/0rtM9XoS9qw?rel=0&modestbranding=1&showinfo=0&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe> </div>
