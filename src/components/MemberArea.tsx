@@ -35,8 +35,8 @@ export default function MemberArea({ onLogout }: MemberAreaProps) {
     }
   }, []);
 
-  const unlockContent = () => {
-    const unlockedModules = modules.map(module => {
+  const getUnlockedModules = () => {
+    return modulesWithLessons.map(module => {
       if (module.id === 'module-3') {
         return {
           ...module,
@@ -68,7 +68,18 @@ export default function MemberArea({ onLogout }: MemberAreaProps) {
       }
       return module;
     });
+  };
+
+  const unlockContent = () => {
+    const unlockedModules = getUnlockedModules();
     setModules(unlockedModules);
+    
+    if (selectedLesson && selectedLesson.locked) {
+      const module3 = unlockedModules.find(m => m.id === 'module-3');
+      if (module3 && module3.lessons.length > 0) {
+        setSelectedLesson(module3.lessons[0]);
+      }
+    }
   };
 
   const handleUnlock = (key: string) => {
@@ -86,7 +97,13 @@ export default function MemberArea({ onLogout }: MemberAreaProps) {
     if (lesson.locked && !isUnlocked) {
       setShowUnlockModal(true);
     } else {
-      setSelectedLesson(lesson);
+      const currentModule = modules.find(m => m.id === lesson.module_id);
+      if (currentModule) {
+        const updatedLesson = currentModule.lessons.find(l => l.id === lesson.id);
+        setSelectedLesson(updatedLesson || lesson);
+      } else {
+        setSelectedLesson(lesson);
+      }
     }
   };
 
